@@ -1,4 +1,7 @@
 package pl.modrakowski.receipes.common.data
 
-data class Recipe(val name: String) {
+data class Recipe(
+        val name: String,
+        val imageUrl: String
+) {
 }

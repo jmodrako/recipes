@@ -1,5 +1,7 @@
 package pl.modrakowski.receipes.home.data
 
-data class HomeData(val name: String) {
+import pl.modrakowski.receipes.common.data.Recipe
+
+data class HomeData(val recipes: List<Recipe>) {
 
 }
