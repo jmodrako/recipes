@@ -7,11 +7,11 @@ import android.support.v7.widget.LinearLayoutManager
 import android.util.TypedValue
 import android.view.Gravity
 import android.widget.FrameLayout
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import pl.modrakowski.receipes.R
 import pl.modrakowski.receipes.common.data.Recipe
 import pl.modrakowski.receipes.home.data.HomeData
+import pl.modrakowski.receipes.home.view.RecipeListItemView
 
 class HomeActivity : AppCompatActivity(), HomeView, HomeAdapter.OnHomeItemClickListener {
 
@@ -61,8 +61,8 @@ class HomeActivity : AppCompatActivity(), HomeView, HomeAdapter.OnHomeItemClickL
         super.onPause()
     }
 
-    override fun onHomeItemClick(recipe: Recipe) {
-        Toast.makeText(this, recipe.toString(), Toast.LENGTH_SHORT).show()
+    override fun onHomeItemClick(recipe: Recipe, recipeImageView: RecipeListItemView) {
+        presenter.openRecipeDetails(this, recipe, recipeImageView)
     }
 
     override fun onDataAvailable(data: HomeData) {

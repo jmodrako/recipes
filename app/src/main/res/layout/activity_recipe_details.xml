@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/list_item_recipe_image"
+        android:id="@+id/recipe_details_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:contentDescription="@null"
         android:scaleType="centerCrop"
         android:transitionName="@string/shared_recipe_image" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:background="#30353535" />
-
     <TextView
-        android:id="@+id/list_item_recipe_title"
+        android:id="@+id/recipe_details_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:fontFamily="sans-serif-black"
+        android:padding="16dp"
         android:textAllCaps="true"
-        android:textColor="@android:color/white"
+        android:textColor="#2D302F"
         android:textSize="28dp"
-        android:transitionName="@string/shared_recipe_title"
         tools:text="Title" />
-
-</merge>
+</LinearLayout>

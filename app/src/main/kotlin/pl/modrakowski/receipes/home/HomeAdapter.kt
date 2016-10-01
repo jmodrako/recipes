@@ -9,7 +9,7 @@ import pl.modrakowski.receipes.home.view.RecipeListItemView
 class HomeAdapter : RecyclerView.Adapter<HomeHolder>() {
 
     interface OnHomeItemClickListener {
-        fun onHomeItemClick(recipe: Recipe)
+        fun onHomeItemClick(recipe: Recipe, recipeImageView: RecipeListItemView)
     }
 
     val data: MutableList<Recipe> = mutableListOf()
@@ -27,9 +27,13 @@ class HomeAdapter : RecyclerView.Adapter<HomeHolder>() {
     }
 
     override fun onBindViewHolder(holder: HomeHolder, position: Int) {
+        val recipeView: RecipeListItemView = holder.recipeView
+
         val recipe: Recipe = data[position]
-        holder.recipeView.withModel(recipe)
-        holder.recipeView.setOnClickListener { onHomeItemClickListener?.onHomeItemClick(recipe) }
+        recipeView.withModel(recipe)
+        recipeView.setOnClickListener {
+            onHomeItemClickListener?.onHomeItemClick(recipe, recipeView)
+        }
     }
 
     override fun getItemCount(): Int = data.size

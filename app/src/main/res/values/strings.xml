@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Receipes</string>
+    <string name="shared_recipe_image">shared_recipe_image</string>
+    <string name="shared_recipe_title">shared_recipe_title</string>
 </resources>
